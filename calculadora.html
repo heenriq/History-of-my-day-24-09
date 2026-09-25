@@ -4,21 +4,61 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculadora</title>
+    <style>
+      .botao-grande {
+        width: 200px;
+        height: 50px;
+        font-size: 18px;
+        border-radius: 8px;
+        background: #ffffff;
+        color: rgb(0, 0, 0);
+        cursor: pointer;
+      }
+      .display {
+        background: #ffffff;
+        border: 2px solid black;
+        border-radius: 8px;
+        width: 620px;
+        height: 50px;
+        text-align: right;
+        box-sizing: border-box;
+      }
+      .grade {
+        display: grid;
+        grid-template-columns: repeat(4, 200px);
+        grid-template-rows: repeat(4, 50px);
+        gap: 10px;
+      }
+    </style>
   </head>
   <body>
-    <p>Resultado</p>
-    <div>
-      <button>9</button> <button>8</button> <button>7</button> <br />
-      <button>6</button> <button>5</button> <button>4</button> <br />
-      <button>3</button> <button>2</button> <button>1</button> <br />
-      <button>0</button>
-      <select name="equacoes" id="">
-        <option value="adicao">Adição</option>
-        <option value="subtracao">Subtração</option>
-        <option value="divisao">Divisão</option>
-        <option value="multiplicacao">Multiplicação</option>
-      </select>
-      <button>=</button>
+    <div class="display">
+      <p>0</p>
+    </div>
+    <div class="grade">
+      <button class="botao-grande">8</button>
+      <button class="botao-grande">9</button>
+      <button class="botao-grande">7</button>
+      <button class="botao-grande">+</button>
+
+      <button class="botao-grande">6</button>
+      <button class="botao-grande">5</button>
+      <button class="botao-grande">4</button>
+      <button class="botao-grande">-</button>
+
+      <button class="botao-grande">3</button>
+      <button class="botao-grande">2</button>
+      <button class="botao-grande">1</button>
+      <button class="botao-grande">/</button>
+
+      <button
+        style="grid-row: 4; grid-column: 2"
+        class="botao-grande botao-zero"
+      >
+        0
+      </button>
+      <button style="grid-column: 3" class="botao-grande">=</button>
+      <button class="botao-grande">X</button>
     </div>
   </body>
 </html>
