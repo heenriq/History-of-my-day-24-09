@@ -14,6 +14,10 @@
         color: rgb(0, 0, 0);
         cursor: pointer;
       }
+      .botao-zero {
+        grid-row: 4;
+        grid-column: 2;
+      }
       .display {
         background: #ffffff;
         border: 2px solid black;
@@ -33,33 +37,31 @@
   </head>
   <body>
     <div class="display">
-      <p>0</p>
+      <p id="display">0</p>
     </div>
     <br />
-    <div class="grade">
-      <button class="botao-grande">9</button>
-      <button class="botao-grande">8</button>
-      <button class="botao-grande">7</button>
-      <button class="botao-grande">+</button>
+    <div class="grade" id="divNums">
+      <button class="botao-grande" data-type="num">9</button>
+      <button class="botao-grande" data-type="num">8</button>
+      <button class="botao-grande" data-type="num">7</button>
+      <button class="botao-grande" data-type="op">+</button>
 
-      <button class="botao-grande">6</button>
-      <button class="botao-grande">5</button>
-      <button class="botao-grande">4</button>
-      <button class="botao-grande">-</button>
+      <button class="botao-grande" data-type="num">6</button>
+      <button class="botao-grande" data-type="num">5</button>
+      <button class="botao-grande" data-type="num">4</button>
+      <button class="botao-grande" data-type="op">-</button>
 
-      <button class="botao-grande">3</button>
-      <button class="botao-grande">2</button>
-      <button class="botao-grande">1</button>
-      <button class="botao-grande">/</button>
+      <button class="botao-grande" data-type="num">3</button>
+      <button class="botao-grande" data-type="num">2</button>
+      <button class="botao-grande" data-type="num">1</button>
+      <button class="botao-grande" data-type="op">/</button>
 
-      <button
-        style="grid-row: 4; grid-column: 2"
-        class="botao-grande botao-zero"
-      >
-        0
+      <button class="botao-grande botao-zero" data-type="num">0</button>
+      <button style="grid-column: 3" class="botao-grande" data-type="calc">
+        =
       </button>
-      <button style="grid-column: 3" class="botao-grande">=</button>
-      <button class="botao-grande">X</button>
+      <button class="botao-grande" data-type="op">X</button>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
