@@ -29,37 +29,47 @@
         grid-template-rows: repeat(4, 50px);
         gap: 10px;
       }
+      .botao-zero {
+        grid-row: 4;
+        grid-column: 2;
+      }
     </style>
   </head>
   <body>
     <div class="display">
-      <p>0</p>
+      <p id="display"></p>
     </div>
     <br />
-    <div class="grade">
-      <button class="botao-grande">9</button>
-      <button class="botao-grande">8</button>
-      <button class="botao-grande">7</button>
+    <div class="grade" id="calc">
+      <button class="botao-grande" onclick="addNumber(9)">9</button>
+      <button class="botao-grande" onclick="addNumber(8)">8</button>
+      <button class="botao-grande" onclick="addNumber(7)">7</button>
       <button class="botao-grande">+</button>
 
-      <button class="botao-grande">6</button>
-      <button class="botao-grande">5</button>
-      <button class="botao-grande">4</button>
+      <button class="botao-grande" onclick="addNumber(6)">6</button>
+      <button class="botao-grande" onclick="addNumber(5)">5</button>
+      <button class="botao-grande" onclick="addNumber(4)">4</button>
       <button class="botao-grande">-</button>
 
-      <button class="botao-grande">3</button>
-      <button class="botao-grande">2</button>
-      <button class="botao-grande">1</button>
+      <button class="botao-grande" onclick="addNumber(3)">3</button>
+      <button class="botao-grande" onclick="addNumber(2)">2</button>
+      <button class="botao-grande" onclick="addNumber(1)">1</button>
       <button class="botao-grande">/</button>
 
-      <button
-        style="grid-row: 4; grid-column: 2"
-        class="botao-grande botao-zero"
-      >
-        0
+      <button class="botao-grande botao-zero" onclick="addNumber(0)">0</button>
+      <button style="grid-column: 3" class="botao-grande" data-type="equal">
+        =
       </button>
-      <button style="grid-column: 3" class="botao-grande">=</button>
-      <button class="botao-grande">X</button>
+      <button class="botao-grande" data-type="op">X</button>
     </div>
+
+    <script>
+      function addNumber(buttonValue) {
+        let calcDisplay = document.getElementById("display")
+        calcDisplay.textContent += buttonValue
+      }
+
+      
+    </script>
   </body>
 </html>
