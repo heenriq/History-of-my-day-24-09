@@ -44,32 +44,60 @@
       <button class="botao-grande" onclick="addNumber(9)">9</button>
       <button class="botao-grande" onclick="addNumber(8)">8</button>
       <button class="botao-grande" onclick="addNumber(7)">7</button>
-      <button class="botao-grande">+</button>
+      <button class="botao-grande" onclick="addOp('+')">+</button>
 
       <button class="botao-grande" onclick="addNumber(6)">6</button>
       <button class="botao-grande" onclick="addNumber(5)">5</button>
       <button class="botao-grande" onclick="addNumber(4)">4</button>
-      <button class="botao-grande">-</button>
+      <button class="botao-grande" onclick="addOp('-')">-</button>
 
       <button class="botao-grande" onclick="addNumber(3)">3</button>
       <button class="botao-grande" onclick="addNumber(2)">2</button>
       <button class="botao-grande" onclick="addNumber(1)">1</button>
-      <button class="botao-grande">/</button>
+      <button class="botao-grande" onclick="addOp('/')">/</button>
 
       <button class="botao-grande botao-zero" onclick="addNumber(0)">0</button>
-      <button style="grid-column: 3" class="botao-grande" data-type="equal">
+      <button style="grid-column: 3" class="botao-grande" onclick="igual()">
         =
       </button>
-      <button class="botao-grande" data-type="op">X</button>
+      <button class="botao-grande" data-type="op" onclick="addOp('X')">
+        X
+      </button>
     </div>
 
     <script>
-      function addNumber(buttonValue) {
-        let calcDisplay = document.getElementById("display")
-        calcDisplay.textContent += buttonValue
-      }
+      let calcDisplay;
+      let op = "";
+      let num1 = "";
+      let num2 = "";
 
-      
+      const operadores = {
+        "+": (a, b) => a + b,
+        "-": (a, b) => a - b,
+        "X": (a, b) => a * b,
+        "/": (a, b) => a / b,
+      };
+      function addNumber(buttonValue) {
+        calcDisplay = document.getElementById("display");
+        calcDisplay.textContent += buttonValue;
+      }
+      function addOp(opValue) {
+        if (op === "") {
+          op = opValue;
+          num1 = parseInt(calcDisplay.textContent);
+          calcDisplay.textContent = "";
+        } else {
+          alert("Operação já escolhida.");
+        }
+      }
+      function igual() {
+        if (op != "" || num2 != "") {
+          num2 = parseInt(calcDisplay.textContent);
+          calcDisplay.textContent = operadores[op](num1, num2);
+        } else {
+          alert("operação ou segundo numero nao escolhido");
+        }
+      }
     </script>
   </body>
 </html>
